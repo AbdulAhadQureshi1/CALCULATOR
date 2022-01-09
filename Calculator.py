@@ -5,9 +5,18 @@ def three_num():
             first number space operator space second number space operator space third number
     ''')
     a,o,b,o2,c = input().split()
-    a = int(a)
-    b = int(b)
-    c = int(c)
+    if a == 'e':
+        a = math.e
+    else:
+        a = float(a)
+    if b == 'e':
+        b = math.e
+    else:
+        b = float(b)
+    if c == 'e':
+        c = math.e
+    else:
+        c = float(c)
     o = o.lower()
     o2 = o.lower()
     return a,b,c,o,o2
@@ -17,8 +26,14 @@ def two_num():
             first number space operator space second number
     ''')
     a,o,b = input().split()
-    a = int(a)
-    b = int(b)
+    if a == 'e':
+        a = math.e
+    else:
+        a = float(a)
+    if b == 'e':
+        b = math.e
+    else:
+        b = float(b)
     o = o.lower()
     return a,b,o
 def trignometric():
@@ -73,6 +88,8 @@ while flag:
                     print("Output: \t", a + b / c)
                 elif o2 == 'x':
                     print("Output: \t", a + b * c)
+                elif o2 == '^':
+                    print("Output: \t", a ** b ** c)
             elif o == '-':
                 if o2 == '-':
                     print("Output : \t", a - b - c)
@@ -82,6 +99,8 @@ while flag:
                     print("Output: \t", a - b / c)
                 elif o2 == 'x':
                     print("Output: \t", a - b * c)
+                elif o2 == '^':
+                    print("Output: \t", a ** b ** c)
             elif o == 'x':
                 if o2 == '-':
                     print("Output : \t", a * b-c)
@@ -91,6 +110,8 @@ while flag:
                     print("Output: \t", a * b / c)
                 elif o2 == 'x':
                     print("Output: \t", a * b * c)
+                elif o2 == '^':
+                    print("Output: \t", a ** b ** c)
             elif o == '/':
                 if o2 == '-':
                     print("Output : \t", a / b-c)
@@ -100,6 +121,19 @@ while flag:
                     print("Output: \t", a / b / c)
                 elif o2 == 'x':
                     print("Output: \t", a / b * c)
+                elif o2 == '^':
+                    print("Output: \t", a ** b ** c)
+            if o == '^':
+                if o2 == '-':
+                    print("Output : \t", a ** b-c)
+                elif o2 == '+':
+                    print("Output: \t", a ** b+c)
+                elif o2 == '/':
+                    print("Output: \t", a ** b / c)
+                elif o2 == 'x':
+                    print("Output: \t", a ** b * c)
+                elif o2 == '^':
+                    print("Output: \t", a ** b ** c)
         elif choice2 == 1:
             a,b,o = two_num()
             if o == '+':
@@ -191,6 +225,9 @@ while flag:
         again = input("Do you want to use my calculator again? Y for yes, N for no: \t").upper()
         if again == 'N':
             flag = False
+            print('''
+==========================================================================================THANKS FOR USING MY CALCULATOR-SEE YOU SOON=============================================================================================
+            ''')
             break
         elif again =='Y':
             flag = True
